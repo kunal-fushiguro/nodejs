@@ -1,11 +1,26 @@
-import events from "events";
+// import events from "events";
 
-class Emitter extends events {}
+// class Emitter extends events {}
 
-const myEvent = new Emitter();
+// const myEvent = new Emitter();
 
-myEvent.on("foo", () => {
+// myEvent.on("foo", () => {
+//   console.log("Event Occured :Fooo");
+// });
+
+// myEvent.emit("foo");
+import CustomEvenEmitter from "./EventEmitter";
+
+const events = new CustomEvenEmitter();
+
+events.addListeners("foo", () => {
   console.log("Event Occured :Fooo");
 });
+events.addListeners("foo", (x) => {
+  console.log("Event Occured :Fooo", x);
+});
 
-myEvent.emit("foo");
+events.emitEvent("foo");
+events.emitEvent("foo", 12);
+events.emitEventOnce("foo", 12);
+events.emitEvent("foo");
