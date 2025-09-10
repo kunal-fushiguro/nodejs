@@ -40,12 +40,12 @@ async function main(): Promise<void> {
     if (!fs.existsSync(OUTPUTPATH)) {
       fs.mkdirSync(OUTPUTPATH, { recursive: true });
     }
-    const VIDEO_OUTPUT_PATH = path.join(OUTPUTPATH, "output_360p.mp4");
+    const VIDEO_OUTPUT_PATH = path.join(OUTPUTPATH, "output_144p.mp4");
 
     ffmpegRef(VIDEO_PATH)
       .videoCodec("libx264")
       .audioCodec("aac")
-      .size("?x360")
+      .size("?x144")
       .format("mp4")
       .on("error", (e) => {
         console.error("Error while Conversion:", e.message);
