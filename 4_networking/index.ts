@@ -1,3 +1,6 @@
-import { tcpServer } from "./networks/tcp";
+// import { tcpServer } from "./networks/tcp";
 
-tcpServer();
+// tcpServer();
+import { udpServer } from "./networks/udp";
+
+udpServer();
